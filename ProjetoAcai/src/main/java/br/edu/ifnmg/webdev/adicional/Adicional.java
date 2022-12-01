@@ -1,10 +1,13 @@
 package br.edu.ifnmg.webdev.adicional;
 
+import br.edu.ifnmg.webdev.item.Item;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,8 +19,14 @@ public class Adicional implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private String nome;
+    
     private Float valor;
+    
+    @ManyToMany
+    @JoinColumn (name="item_id")
+    private Item item;
 
     public Adicional() {
     }
@@ -46,11 +55,16 @@ public class Adicional implements Serializable {
     public void setValor(Float valor) {
         this.valor = valor;
     }
-    //</editor-fold>
 
-    @Override
-    public String toString() {
-        return "Adicional{" + "id=" + id + ", nome=" + nome + ", valor=" + valor + '}';
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
     
+    
+    //</editor-fold>
+
 }

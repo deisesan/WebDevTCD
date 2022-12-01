@@ -16,8 +16,11 @@ public class Endereco implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private String lodradouro;
+    
     private Integer numero;
+    
     private String bairro;
 
     public Endereco() {
@@ -56,10 +59,5 @@ public class Endereco implements Serializable{
         this.bairro = bairro;
     }
     //</editor-fold>
-
-    @Override
-    public String toString() {
-        return "Endereco{" + "id=" + id + ", lodradouro=" + lodradouro + ", numero=" + numero + ", Bairro=" + bairro + '}';
-    }
 
 }

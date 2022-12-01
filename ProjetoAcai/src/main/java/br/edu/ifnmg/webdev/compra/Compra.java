@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,10 +22,14 @@ public class Compra implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     @ManyToOne
     @JoinColumn(name="cliente_id")
     private Usuario cliente;
+    
+    @OneToMany
     private List<Item> itens;
+    
     private Float total;
 
     public Compra() {
@@ -63,10 +68,5 @@ public class Compra implements Serializable {
         this.total = total;
     }
     //</editor-fold>
-
-    @Override
-    public String toString() {
-        return "Compra{" + "id=" + id + ", cliente=" + cliente + ", itens=" + itens + ", total=" + total + '}';
-    }
     
 }

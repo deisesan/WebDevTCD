@@ -25,14 +25,19 @@ public class Usuario implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private String nome;
+    
     private LocalDate nascimento;
+    
     @OneToOne
     @JoinColumn(name="telefone_id")
     private Telefone telefone;
+    
     @OneToOne
     @JoinColumn(name="endereco_id")
     private Endereco endereco;
+    
     @OneToOne
     @JoinColumn(name="credencial_id")
     private Credencial credencial;
@@ -100,10 +105,5 @@ public class Usuario implements Serializable{
         this.compras = compras;
     }
     //</editor-fold>
-
-    @Override
-    public String toString() {
-        return "Usuario{" + "id=" + id + ", nome=" + nome + ", nascimento=" + nascimento + ", telefone=" + telefone + ", endereco=" + endereco + ", credencial=" + credencial + '}';
-    }
 
 }

@@ -23,9 +23,13 @@ public class Credencial implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private String email;
+    
     private String senha;
+    
     private Perfil perfil;
+    
     @OneToOne
     @JoinColumn(name="usuario_id")
     private Usuario usuario;
@@ -74,10 +78,5 @@ public class Credencial implements Serializable{
         this.usuario = usuario;
     }
     //</editor-fold>
-
-    @Override
-    public String toString() {
-        return "Credencial{" + "id=" + id + ", email=" + email + ", senha=" + senha + ", perfil=" + perfil + ", usuario=" + usuario + '}';
-    }
-    
+  
 }

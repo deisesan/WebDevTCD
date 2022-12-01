@@ -16,7 +16,9 @@ public class Telefone implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private Byte ddd;
+    
     private Integer numero;
 
     public Telefone() {
@@ -48,10 +50,5 @@ public class Telefone implements Serializable {
     }
 
     //</editor-fold>
-    
-    @Override
-    public String toString() {
-        return "Telefone{" + "id=" + id + ", ddd=" + ddd + ", numero=" + numero + '}';
-    }
     
 }

@@ -16,7 +16,9 @@ public class Acai implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private Long tamanho;
+    
     private Float valor;
 
     public Acai() {
@@ -47,10 +49,5 @@ public class Acai implements Serializable{
         this.valor = valor;
     }
     //</editor-fold>
-
-    @Override
-    public String toString() {
-        return "Acai{" + "id=" + id + ", tamanho=" + tamanho + ", valor=" + valor + '}';
-    }
     
 }
