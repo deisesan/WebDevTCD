@@ -3,14 +3,26 @@ package br.edu.ifnmg.webdev.usuario;
 import br.edu.ifnmg.webdev.credencial.Credencial;
 import br.edu.ifnmg.webdev.endereco.Endereco;
 import br.edu.ifnmg.webdev.telefone.Telefone;
+import java.io.Serializable;
 import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author dayan
  */
-public class Usuario {
+@Entity
+@Table
+public class Usuario implements Serializable{
 
+     private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private LocalDate nascimento;
