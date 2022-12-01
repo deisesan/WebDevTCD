@@ -1,17 +1,29 @@
 package br.edu.ifnmg.webdev.credencial;
 
 import br.edu.ifnmg.webdev.usuario.Usuario;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author dayan
  */
-public class Credencial {
+@Entity
+@Table
+public class Credencial implements Serializable{
 
     public enum Perfil {
         ADMINISTRADOR, FUNCIONARIO, CLIENTE;
     }
 
+     private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String email;
     private String senha;
