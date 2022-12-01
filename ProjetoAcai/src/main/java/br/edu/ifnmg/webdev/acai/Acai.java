@@ -7,10 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- *
- * @author dayan
- */
 @Entity
 @Table
 public class Acai implements Serializable{
@@ -56,4 +52,5 @@ public class Acai implements Serializable{
     public String toString() {
         return "Acai{" + "id=" + id + ", tamanho=" + tamanho + ", valor=" + valor + '}';
     }
+    
 }

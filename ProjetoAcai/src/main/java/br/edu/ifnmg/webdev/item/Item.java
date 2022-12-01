@@ -10,15 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- *
- * @author deise
- */
 @Entity
 @Table
 public class Item implements Serializable{
     
-     private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -74,4 +70,5 @@ public class Item implements Serializable{
     public String toString() {
         return "Item{" + "id=" + id + ", acai=" + acai + ", adicionais=" + adicionais + ", quantidade=" + quantidade + ", preco=" + preco + '}';
     }
+    
 }

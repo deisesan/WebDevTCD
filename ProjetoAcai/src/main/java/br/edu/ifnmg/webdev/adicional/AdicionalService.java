@@ -4,10 +4,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-/**
- *
- * @author dayan
- */
 @Stateless
 public class AdicionalService implements AdicionalServiceLocal {
 
@@ -18,5 +14,5 @@ public class AdicionalService implements AdicionalServiceLocal {
     public void save(Adicional adicional) {
         em.persist(adicional);
     }
-
+    
 }

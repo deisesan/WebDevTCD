@@ -4,10 +4,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-/**
- *
- * @author dayan
- */
 @Stateless
 public class AcaiService implements AcaiServiceLocal {
 
@@ -18,5 +14,5 @@ public class AcaiService implements AcaiServiceLocal {
     public void save(Acai acai) {
         em.persist(acai);
     }
-
+    
 }

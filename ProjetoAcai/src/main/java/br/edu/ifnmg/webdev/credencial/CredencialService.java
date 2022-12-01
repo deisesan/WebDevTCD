@@ -4,10 +4,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-/**
- *
- * @author dayan
- */
 @Stateless
 public class CredencialService implements CredencialServiceLocal {
     

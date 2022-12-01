@@ -7,10 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- *
- * @author dayan
- */
 @Entity
 @Table
 public class Telefone implements Serializable {
@@ -57,4 +53,5 @@ public class Telefone implements Serializable {
     public String toString() {
         return "Telefone{" + "id=" + id + ", ddd=" + ddd + ", numero=" + numero + '}';
     }
+    
 }

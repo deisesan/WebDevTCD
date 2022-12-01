@@ -8,10 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- *
- * @author dayan
- */
 @Entity
 @Table
 public class Credencial implements Serializable{
@@ -79,4 +75,5 @@ public class Credencial implements Serializable{
     public String toString() {
         return "Credencial{" + "id=" + id + ", email=" + email + ", senha=" + senha + ", perfil=" + perfil + ", usuario=" + usuario + '}';
     }
+    
 }
