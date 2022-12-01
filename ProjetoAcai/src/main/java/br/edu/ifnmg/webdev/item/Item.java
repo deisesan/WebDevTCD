@@ -17,29 +17,29 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Item implements Serializable{
-    
+public class Item implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @OneToOne
-    @JoinColumn(name="acai_id")
+    @JoinColumn(name = "acai_id")
     private Acai acai;
-    
-    @ManyToMany(mappedBy="itens")
+
+    @ManyToMany(mappedBy = "itens")
     private List<Adicional> adicionais;
-    
+
     private Integer quantidade;
-    
+
     private Float preco;
-    
+
     @ManyToOne
-    @JoinColumn(name="compra_id")
+    @JoinColumn(name = "compra_id")
     private Compra compra;
-    
+
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
     public Long getId() {
         return id;
@@ -74,13 +74,18 @@ public class Item implements Serializable{
     }
 
     public Float getPreco() {
+
+        float soma = 0;
+        for (Adicional ad : adicionais) {
+
+            soma += ad.getValor();
+        }
+
+        preco = (soma + acai.getValor()) * quantidade;
+
         return preco;
     }
-
-    public void setPreco(Float preco) {
-        this.preco = preco;
-    }
-
+    
     public Compra getCompra() {
         return compra;
     }

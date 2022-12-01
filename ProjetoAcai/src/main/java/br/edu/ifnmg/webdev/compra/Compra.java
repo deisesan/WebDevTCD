@@ -22,14 +22,14 @@ public class Compra implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @ManyToOne
-    @JoinColumn(name="cliente_id")
+    @JoinColumn(name = "cliente_id")
     private Usuario cliente;
-    
+
     @OneToMany
     private List<Item> itens;
-    
+
     private Float total;
 
     public Compra() {
@@ -61,12 +61,18 @@ public class Compra implements Serializable {
     }
 
     public Float getTotal() {
+
+        float soma = 0;
+
+        for (Item i : itens) {
+
+            soma += i.getPreco();
+        }
+
+        this.total = soma;
+
         return total;
     }
 
-    public void setTotal(Float total) {
-        this.total = total;
-    }
     //</editor-fold>
-    
 }
