@@ -9,7 +9,7 @@ public class Endereco {
     private Long id;
     private String lodradouro;
     private Integer numero;
-    private String Bairro;
+    private String bairro;
 
     public Endereco() {
     }
@@ -40,17 +40,17 @@ public class Endereco {
     }
 
     public String getBairro() {
-        return Bairro;
+        return bairro;
     }
 
-    public void setBairro(String Bairro) {
-        this.Bairro = Bairro;
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
     }
     //</editor-fold>
 
     @Override
     public String toString() {
-        return "Endereco{" + "id=" + id + ", lodradouro=" + lodradouro + ", numero=" + numero + ", Bairro=" + Bairro + '}';
+        return "Endereco{" + "id=" + id + ", lodradouro=" + lodradouro + ", numero=" + numero + ", Bairro=" + bairro + '}';
     }
 
 }

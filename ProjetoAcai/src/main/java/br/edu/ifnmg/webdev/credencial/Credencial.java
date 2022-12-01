@@ -16,7 +16,6 @@ public class Credencial {
     private String email;
     private String senha;
     private Perfil perfil;
-    private Boolean ativo;
     private Usuario usuario;
 
     public Credencial() {
@@ -55,14 +54,6 @@ public class Credencial {
         this.perfil = perfil;
     }
 
-    public Boolean getAtivo() {
-        return ativo;
-    }
-
-    public void setAtivo(Boolean ativo) {
-        this.ativo = ativo;
-    }
-
     public Usuario getUsuario() {
         return usuario;
     }
@@ -74,7 +65,6 @@ public class Credencial {
 
     @Override
     public String toString() {
-        return "Credencial{" + "id=" + id + ", email=" + email + ", senha=" + senha + ", perfil=" + perfil + ", ativo=" + ativo + ", usuario=" + usuario + '}';
+        return "Credencial{" + "id=" + id + ", email=" + email + ", senha=" + senha + ", perfil=" + perfil + ", usuario=" + usuario + '}';
     }
-
 }

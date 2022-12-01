@@ -11,8 +11,7 @@ public class Acai {
 
     private Long id;
     private Long tamanho;
-    private List<Adicional> adicionais;
-    private Float preco;
+    private Float valor;
 
     public Acai() {
     }
@@ -34,26 +33,17 @@ public class Acai {
         this.tamanho = tamanho;
     }
 
-    public List<Adicional> getAdicionais() {
-        return adicionais;
+    public Float getValor() {
+        return valor;
     }
 
-    public void setAdicionais(List<Adicional> adicionais) {
-        this.adicionais = adicionais;
-    }
-
-    public Float getPreco() {
-        return preco;
-    }
-
-    public void setPreco(Float preco) {
-        this.preco = preco;
+    public void setValor(Float valor) {
+        this.valor = valor;
     }
     //</editor-fold>
 
     @Override
     public String toString() {
-        return "Acai{" + "id=" + id + ", tamanho=" + tamanho + ", adicionais=" + adicionais + ", preco=" + preco + '}';
+        return "Acai{" + "id=" + id + ", tamanho=" + tamanho + ", valor=" + valor + '}';
     }
-
 }

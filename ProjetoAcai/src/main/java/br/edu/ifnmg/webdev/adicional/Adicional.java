@@ -43,5 +43,4 @@ public class Adicional {
     public String toString() {
         return "Adicional{" + "id=" + id + ", nome=" + nome + ", valor=" + valor + '}';
     }
-
 }
