@@ -9,16 +9,16 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Acai implements Serializable{
-    
+public class Acai implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private Long tamanho;
-    
+
     private Float valor;
 
     public Acai() {
@@ -49,5 +49,5 @@ public class Acai implements Serializable{
         this.valor = valor;
     }
     //</editor-fold>
-    
+
 }

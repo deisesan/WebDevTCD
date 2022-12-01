@@ -12,26 +12,26 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Credencial implements Serializable{
+public class Credencial implements Serializable {
 
     public enum Perfil {
         ADMINISTRADOR, FUNCIONARIO, CLIENTE;
     }
 
-     private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String email;
-    
+
     private String senha;
-    
+
     private Perfil perfil;
-    
+
     @OneToOne
-    @JoinColumn(name="usuario_id")
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
     public Credencial() {
@@ -78,5 +78,5 @@ public class Credencial implements Serializable{
         this.usuario = usuario;
     }
     //</editor-fold>
-  
+
 }

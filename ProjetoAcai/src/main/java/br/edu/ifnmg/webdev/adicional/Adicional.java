@@ -2,11 +2,13 @@ package br.edu.ifnmg.webdev.adicional;
 
 import br.edu.ifnmg.webdev.item.Item;
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -19,14 +21,17 @@ public class Adicional implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String nome;
-    
+
     private Float valor;
-    
+
     @ManyToMany
-    @JoinColumn (name="item_id")
-    private Item item;
+    @JoinTable(
+            name = "item_adicional",
+            joinColumns = @JoinColumn(name = "item_id"),
+            inverseJoinColumns = @JoinColumn(name = "adicional_id"))
+    private List<Item> itens;
 
     public Adicional() {
     }
@@ -56,15 +61,12 @@ public class Adicional implements Serializable {
         this.valor = valor;
     }
 
-    public Item getItem() {
-        return item;
+    public List<Item> getItens() {
+        return itens;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
+    public void setItens(List<Item> itens) {
+        this.itens = itens;
     }
-    
-    
     //</editor-fold>
-
 }

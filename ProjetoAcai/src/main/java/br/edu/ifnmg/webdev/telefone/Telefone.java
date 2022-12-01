@@ -11,14 +11,14 @@ import javax.persistence.Table;
 @Table
 public class Telefone implements Serializable {
 
-     private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private Byte ddd;
-    
+
     private Integer numero;
 
     public Telefone() {
@@ -48,7 +48,6 @@ public class Telefone implements Serializable {
     public void setNumero(Integer numero) {
         this.numero = numero;
     }
-
     //</editor-fold>
     
 }

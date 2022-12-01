@@ -18,30 +18,30 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Usuario implements Serializable{
+public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String nome;
-    
+
     private LocalDate nascimento;
-    
+
     @OneToOne
-    @JoinColumn(name="telefone_id")
+    @JoinColumn(name = "telefone_id")
     private Telefone telefone;
-    
+
     @OneToOne
-    @JoinColumn(name="endereco_id")
+    @JoinColumn(name = "endereco_id")
     private Endereco endereco;
-    
+
     @OneToOne
-    @JoinColumn(name="credencial_id")
+    @JoinColumn(name = "credencial_id")
     private Credencial credencial;
-    
+
     @OneToMany
     private List<Compra> compras;
 
@@ -95,7 +95,7 @@ public class Usuario implements Serializable{
 
     public void setCredencial(Credencial credencial) {
         this.credencial = credencial;
-    }    
+    }
 
     public List<Compra> getCompras() {
         return compras;

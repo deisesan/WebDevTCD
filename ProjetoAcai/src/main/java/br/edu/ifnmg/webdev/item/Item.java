@@ -29,7 +29,7 @@ public class Item implements Serializable{
     @JoinColumn(name="acai_id")
     private Acai acai;
     
-    @ManyToMany
+    @ManyToMany(mappedBy="itens")
     private List<Adicional> adicionais;
     
     private Integer quantidade;
