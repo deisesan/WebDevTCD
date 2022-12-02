@@ -44,7 +44,7 @@ public class Usuario implements Serializable {
     @JoinColumn(name = "endereco_id")
     private Endereco endereco;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "credencial_id")
     private Credencial credencial;
 

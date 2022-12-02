@@ -3,6 +3,7 @@ package br.edu.ifnmg.webdev.credencial;
 import br.edu.ifnmg.webdev.usuario.Usuario;
 import java.io.Serializable;
 import javax.json.bind.annotation.JsonbTransient;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -27,15 +28,16 @@ public class Credencial implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(length = 250, nullable = false, unique = true)
     private String email;
 
+    @Column(length = 32, nullable = false)
     private String senha;
 
     @Enumerated(EnumType.ORDINAL)
     private Perfil perfil;
 
-    @OneToOne(mappedBy ="credencial")
-    @JoinColumn(name = "usuario_id")
+    @OneToOne(mappedBy = "credencial")
     @JsonbTransient
     private Usuario usuario;
 
