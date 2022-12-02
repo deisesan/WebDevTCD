@@ -77,42 +77,42 @@ public class Relatorios extends HttpServlet {
             sb.append("<h1> Trabalho de Conclusão de Disciplina - Desenvolvimento Web 2022 </h1>");
             sb.append("<a href=\"index.html\">Voltar</a>");
 
-            sb.append("<h2>Açaís cadastrados: </h>");
+            sb.append("<h2>Açaís: </h>");
             sb.append("<pre>");
             sb.append(Util.toJson(acaiService.showAcais()));
             sb.append("</pre>");
 
-            sb.append("<h2>Adicionais cadastrados: </h>");
+            sb.append("<h2>Adicionais: </h>");
             sb.append("<pre>");
             sb.append(Util.toJson(adicionalService.showAdicionais()));
             sb.append("</pre>");
 
-            sb.append("<h2>Usuarios cadastrados: </h>");
+            sb.append("<h2>Usuarios: </h>");
             sb.append("<pre>");
             sb.append(Util.toJson(usuarioService.showUsuarios()));
             sb.append("</pre>");
 
-            sb.append("<h2>Credenciais cadastradas: </h>");
+            sb.append("<h2>Credenciais: </h>");
             sb.append("<pre>");
             sb.append(Util.toJson(credencialService.showCredenciais()));
             sb.append("</pre>");
 
-            sb.append("<h2>Telefones cadastrados: </h>");
+            sb.append("<h2>Telefones: </h>");
             sb.append("<pre>");
             sb.append(Util.toJson(telefoneService.showTelefones()));
             sb.append("</pre>");
 
-            sb.append("<h2>Endereços cadastrados: </h>");
+            sb.append("<h2>Endereços: </h>");
             sb.append("<pre>");
             sb.append(Util.toJson(enderecoService.showEnderecos()));
             sb.append("</pre>");
 
-            sb.append("<h2>Itens cadastrados: </h>");
+            sb.append("<h2>Itens: </h>");
             sb.append("<pre>");
             sb.append(Util.toJson(itemService.showItens()));
             sb.append("</pre>");
 
-            sb.append("<h2>Compras cadastrados: </h>");
+            sb.append("<h2>Compras: </h>");
             sb.append("<pre>");
             sb.append(Util.toJson(compraService.showCompras()));
             sb.append("</pre>");
