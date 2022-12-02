@@ -4,6 +4,7 @@ import br.edu.ifnmg.webdev.item.Item;
 import br.edu.ifnmg.webdev.usuario.Usuario;
 import java.io.Serializable;
 import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +26,7 @@ public class Compra implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
+    @JsonbTransient
     private Usuario cliente;
 
     @OneToMany

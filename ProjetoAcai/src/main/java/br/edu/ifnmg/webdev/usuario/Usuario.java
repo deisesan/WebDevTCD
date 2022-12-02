@@ -7,6 +7,7 @@ import br.edu.ifnmg.webdev.telefone.Telefone;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -40,6 +41,7 @@ public class Usuario implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "credencial_id")
+    @JsonbTransient
     private Credencial credencial;
 
     @OneToMany

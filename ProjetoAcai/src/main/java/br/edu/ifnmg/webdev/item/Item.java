@@ -5,6 +5,7 @@ import br.edu.ifnmg.webdev.adicional.Adicional;
 import br.edu.ifnmg.webdev.compra.Compra;
 import java.io.Serializable;
 import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -38,6 +39,7 @@ public class Item implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "compra_id")
+    @JsonbTransient
     private Compra compra;
 
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
@@ -85,7 +87,7 @@ public class Item implements Serializable {
 
         return preco;
     }
-    
+
     public Compra getCompra() {
         return compra;
     }

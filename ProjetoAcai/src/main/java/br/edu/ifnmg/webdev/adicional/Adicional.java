@@ -3,6 +3,7 @@ package br.edu.ifnmg.webdev.adicional;
 import br.edu.ifnmg.webdev.item.Item;
 import java.io.Serializable;
 import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,6 +32,7 @@ public class Adicional implements Serializable {
             name = "item_adicional",
             joinColumns = @JoinColumn(name = "item_id"),
             inverseJoinColumns = @JoinColumn(name = "adicional_id"))
+    @JsonbTransient
     private List<Item> itens;
 
     public Adicional() {
@@ -69,4 +71,10 @@ public class Adicional implements Serializable {
         this.itens = itens;
     }
     //</editor-fold>
+
+    @Override
+    public String toString() {
+        return "Adicional{" + "id=" + id + ", nome=" + nome + ", valor=" + valor + '}';
+    }
+
 }

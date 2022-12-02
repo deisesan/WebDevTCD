@@ -50,4 +50,9 @@ public class Acai implements Serializable {
     }
     //</editor-fold>
 
+    @Override
+    public String toString() {
+        return "Acai{" + "id=" + id + ", tamanho=" + tamanho + ", valor=" + valor + '}';
+    }
+
 }

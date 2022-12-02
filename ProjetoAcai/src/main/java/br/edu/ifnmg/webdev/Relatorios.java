@@ -1,7 +1,11 @@
 package br.edu.ifnmg.webdev;
 
+import br.edu.ifnmg.webdev.acai.AcaiServiceLocal;
+import br.edu.ifnmg.webdev.adicional.AdicionalServiceLocal;
+import br.edu.ifnmg.webdev.util.Util;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +20,12 @@ import javax.transaction.Transactional;
 @Transactional
 @WebServlet(name = "Relatorios", urlPatterns = {"/Relatorios"})
 public class Relatorios extends HttpServlet {
+
+    @Inject
+    private AcaiServiceLocal acaiService;
+    
+    @Inject
+    private AdicionalServiceLocal adicionalService;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,6 +53,16 @@ public class Relatorios extends HttpServlet {
             sb.append("<h1> Trabalho de Conclusão de Disciplina - Desenvolvimento Web 2022 </h1>");
             sb.append("<a href=\"index.html\">Voltar</a>");
 
+            sb.append("<h2>Açaís cadastrados: </h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(acaiService.showAcais()));
+            sb.append("</pre>");
+            
+            sb.append("<h2>Adicionais cadastrados: </h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(adicionalService.showAdicionais()));
+            sb.append("</pre>");
+            
             sb.append("<a href=\"index.html\">Voltar</a>");
             sb.append("</body>");
             sb.append("</html>");
