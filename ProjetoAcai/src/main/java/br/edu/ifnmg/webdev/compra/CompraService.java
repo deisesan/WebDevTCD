@@ -1,8 +1,10 @@
 package br.edu.ifnmg.webdev.compra;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 @Stateless
 public class CompraService implements CompraServiceLocal {
@@ -13,6 +15,12 @@ public class CompraService implements CompraServiceLocal {
     @Override
     public void save(Compra compra) {
         em.persist(compra);
+    }
+
+    @Override
+    public List<Compra> showCompras() {
+        Query q = em.createQuery("SELECT c FROM Compra c");
+        return (List<Compra>) q.getResultList();
     }
 
 }

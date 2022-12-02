@@ -121,8 +121,8 @@ public class CargaDados implements CargaDadosLocal {
         adicionalService.save(adicional5);
         adicionalService.save(adicional6);
         adicionalService.save(adicional7);
-        //</editor-fold>
 
+        //</editor-fold>
         //<editor-fold defaultstate="collapsed" desc="Endereços">
         Endereco endereco1 = new Endereco();
         endereco1.setBairro("Bairro 1");
@@ -203,34 +203,57 @@ public class CargaDados implements CargaDadosLocal {
 
         credencial3.setUsuario(usuario3);
         usuario3.setCredencial(credencial3);
-//
-//        Item item1 = new Item();
-//        item1.setAcai(acai1);
-//        item1.getAdicionais().add(adicional1);
-//        item1.getAdicionais().add(adicional2);
-//        item1.getAdicionais().add(adicional3);
-//        item1.setQuantidade(2);
-//
-//        Compra compra1 = new Compra();
-//        compra1.setCliente(usuario1);
-//        compra1.getItens().add(item1);
-//
-//        item1.setCompra(compra1);
-//
-//        usuario3.getCompras().add(compra1);
-//        
-//        
-//        itemService.save(item1);
-//        compraService.save(compra1);
-//        
-//        
+
+        Item item1 = new Item();
+        item1.setAcai(acai1);
+        item1.getAdicionais().add(adicional1);
+        item1.getAdicionais().add(adicional2);
+        item1.getAdicionais().add(adicional3);
+        item1.getAdicionais().add(adicional4);
+
+        item1.setQuantidade(2);
+
+        adicional1.getItens().add(item1);
+        adicional2.getItens().add(item1);
+        adicional3.getItens().add(item1);
+        adicional4.getItens().add(item1);
+
+        Item item2 = new Item();
+        item2.setAcai(acai2);
+        item2.getAdicionais().add(adicional1);
+        item2.getAdicionais().add(adicional5);
+        item2.getAdicionais().add(adicional6);
+        item2.getAdicionais().add(adicional7);
+
+        item2.setQuantidade(1);
+
+        adicional1.getItens().add(item2);
+        adicional5.getItens().add(item2);
+        adicional6.getItens().add(item2);
+        adicional7.getItens().add(item2);
+
+        Compra compra1 = new Compra();
+        compra1.setCliente(usuario3);
+        compra1.getItens().add(item1);
+        compra1.getItens().add(item2);
+
+        item1.setCompra(compra1);
+        item2.setCompra(compra1);
+
+        usuario3.getCompras().add(compra1);
+
+        itemService.save(item1);
+        itemService.save(item2);
+        compraService.save(compra1);
+
         credencialService.save(credencial1);
         credencialService.save(credencial2);
         credencialService.save(credencial3);
-        
+
         usuarioService.save(usuario1);
         usuarioService.save(usuario2);
         usuarioService.save(usuario3);
+
     }
 
 }

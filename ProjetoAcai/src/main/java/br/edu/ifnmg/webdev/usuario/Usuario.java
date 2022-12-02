@@ -6,9 +6,13 @@ import br.edu.ifnmg.webdev.endereco.Endereco;
 import br.edu.ifnmg.webdev.telefone.Telefone;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import javax.json.bind.annotation.JsonbTransient;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,25 +33,26 @@ public class Usuario implements Serializable {
 
     private String nome;
 
+    @Column(columnDefinition = "DATE")
     private LocalDate nascimento;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "telefone_id")
     private Telefone telefone;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "endereco_id")
     private Endereco endereco;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "credencial_id")
-    @JsonbTransient
     private Credencial credencial;
 
-    @OneToMany
+    @OneToMany(mappedBy = "cliente")
     private List<Compra> compras;
 
     public Usuario() {
+        compras = new ArrayList<>();
     }
 
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
@@ -112,7 +117,5 @@ public class Usuario implements Serializable {
     public String toString() {
         return "Usuario{" + "id=" + id + ", nome=" + nome + ", nascimento=" + nascimento + ", telefone=" + telefone + ", endereco=" + endereco + ", credencial=" + credencial + ", compras=" + compras + '}';
     }
-    
-    
 
 }

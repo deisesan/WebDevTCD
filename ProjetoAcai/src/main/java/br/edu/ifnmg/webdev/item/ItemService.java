@@ -1,8 +1,10 @@
 package br.edu.ifnmg.webdev.item;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 @Stateless
 public class ItemService implements ItemServiceLocal {
@@ -15,4 +17,11 @@ public class ItemService implements ItemServiceLocal {
         em.persist(item);
     }
 
+    @Override
+    public List<Item> showItens() {
+        Query q = em.createQuery("SELECT i FROM Item i");
+        return (List<Item>) q.getResultList();
+    }
+    
+    
 }

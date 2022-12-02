@@ -4,9 +4,12 @@ import br.edu.ifnmg.webdev.acai.Acai;
 import br.edu.ifnmg.webdev.adicional.Adicional;
 import br.edu.ifnmg.webdev.compra.Compra;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.json.bind.annotation.JsonbTransient;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,7 +29,7 @@ public class Item implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "acai_id")
     private Acai acai;
 
@@ -41,6 +44,10 @@ public class Item implements Serializable {
     @JoinColumn(name = "compra_id")
     @JsonbTransient
     private Compra compra;
+
+    public Item() {
+        adicionais = new ArrayList<>();
+    }
 
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
     public Long getId() {
@@ -83,7 +90,7 @@ public class Item implements Serializable {
             soma += ad.getValor();
         }
 
-        preco = (soma + acai.getValor()) * quantidade;
+        preco = (soma + acai.getValor());
 
         return preco;
     }
@@ -101,7 +108,5 @@ public class Item implements Serializable {
     public String toString() {
         return "Item{" + "id=" + id + ", acai=" + acai + ", adicionais=" + adicionais + ", quantidade=" + quantidade + ", preco=" + preco + ", compra=" + compra + '}';
     }
-    
-    
 
 }

@@ -2,6 +2,7 @@ package br.edu.ifnmg.webdev.adicional;
 
 import br.edu.ifnmg.webdev.item.Item;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Entity;
@@ -29,13 +30,15 @@ public class Adicional implements Serializable {
 
     @ManyToMany
     @JoinTable(
-            name = "item_adicional",
-            joinColumns = @JoinColumn(name = "item_id"),
-            inverseJoinColumns = @JoinColumn(name = "adicional_id"))
+            name = "adicional_item",
+            joinColumns = @JoinColumn(name = "adicional_id"),
+            inverseJoinColumns = @JoinColumn(name = "item_id"))
     @JsonbTransient
     private List<Item> itens;
 
     public Adicional() {
+        
+        itens = new ArrayList<>();
     }
 
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">

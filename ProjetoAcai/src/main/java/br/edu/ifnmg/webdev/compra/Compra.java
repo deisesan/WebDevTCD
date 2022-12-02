@@ -3,6 +3,7 @@ package br.edu.ifnmg.webdev.compra;
 import br.edu.ifnmg.webdev.item.Item;
 import br.edu.ifnmg.webdev.usuario.Usuario;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Entity;
@@ -29,12 +30,13 @@ public class Compra implements Serializable {
     @JsonbTransient
     private Usuario cliente;
 
-    @OneToMany
+    @OneToMany(mappedBy = "compra")
     private List<Item> itens;
 
     private Float total;
 
     public Compra() {
+        itens = new ArrayList<>();
     }
 
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
@@ -68,7 +70,7 @@ public class Compra implements Serializable {
 
         for (Item i : itens) {
 
-            soma += i.getPreco();
+            soma += (i.getPreco() * i.getQuantidade());
         }
 
         this.total = soma;
@@ -77,11 +79,9 @@ public class Compra implements Serializable {
     }
 
     //</editor-fold>
-
     @Override
     public String toString() {
         return "Compra{" + "id=" + id + ", cliente=" + cliente + ", itens=" + itens + ", total=" + total + '}';
     }
-    
-    
+
 }

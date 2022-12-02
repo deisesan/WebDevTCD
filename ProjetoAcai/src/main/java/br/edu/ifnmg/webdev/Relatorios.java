@@ -2,7 +2,11 @@ package br.edu.ifnmg.webdev;
 
 import br.edu.ifnmg.webdev.acai.AcaiServiceLocal;
 import br.edu.ifnmg.webdev.adicional.AdicionalServiceLocal;
+import br.edu.ifnmg.webdev.compra.CompraServiceLocal;
 import br.edu.ifnmg.webdev.credencial.CredencialServiceLocal;
+import br.edu.ifnmg.webdev.endereco.EnderecoServiceLocal;
+import br.edu.ifnmg.webdev.item.ItemServiceLocal;
+import br.edu.ifnmg.webdev.telefone.TelefoneServiceLocal;
 import br.edu.ifnmg.webdev.usuario.UsuarioServiceLocal;
 import br.edu.ifnmg.webdev.util.Util;
 import java.io.IOException;
@@ -31,9 +35,21 @@ public class Relatorios extends HttpServlet {
 
     @Inject
     private UsuarioServiceLocal usuarioService;
-    
+
     @Inject
     private CredencialServiceLocal credencialService;
+
+    @Inject
+    private TelefoneServiceLocal telefoneService;
+
+    @Inject
+    private EnderecoServiceLocal enderecoService;
+
+    @Inject
+    private ItemServiceLocal itemService;
+
+    @Inject
+    private CompraServiceLocal compraService;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -70,15 +86,35 @@ public class Relatorios extends HttpServlet {
             sb.append("<pre>");
             sb.append(Util.toJson(adicionalService.showAdicionais()));
             sb.append("</pre>");
-            
+
             sb.append("<h2>Usuarios cadastrados: </h>");
             sb.append("<pre>");
             sb.append(Util.toJson(usuarioService.showUsuarios()));
             sb.append("</pre>");
-            
+
             sb.append("<h2>Credenciais cadastradas: </h>");
             sb.append("<pre>");
             sb.append(Util.toJson(credencialService.showCredenciais()));
+            sb.append("</pre>");
+
+            sb.append("<h2>Telefones cadastrados: </h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(telefoneService.showTelefones()));
+            sb.append("</pre>");
+
+            sb.append("<h2>Endereços cadastrados: </h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(enderecoService.showEnderecos()));
+            sb.append("</pre>");
+
+            sb.append("<h2>Itens cadastrados: </h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(itemService.showItens()));
+            sb.append("</pre>");
+
+            sb.append("<h2>Compras cadastrados: </h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(compraService.showCompras()));
             sb.append("</pre>");
 
             sb.append("<a href=\"index.html\">Voltar</a>");
