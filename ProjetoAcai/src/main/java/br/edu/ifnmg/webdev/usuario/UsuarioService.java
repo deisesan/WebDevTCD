@@ -1,8 +1,10 @@
 package br.edu.ifnmg.webdev.usuario;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 @Stateless
 public class UsuarioService implements UsuarioServiceLocal {
@@ -14,5 +16,11 @@ public class UsuarioService implements UsuarioServiceLocal {
     public void save(Usuario usuario) {
         em.persist(usuario);
     }
-    
+
+    @Override
+    public List<Usuario> showUsuarios() {
+        Query q = em.createQuery("SELECT u FROM Usuario u");
+        return (List<Usuario>) q.getResultList();
+    }
+
 }

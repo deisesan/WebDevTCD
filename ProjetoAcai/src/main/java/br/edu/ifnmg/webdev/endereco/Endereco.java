@@ -60,4 +60,11 @@ public class Endereco implements Serializable{
     }
     //</editor-fold>
 
+    @Override
+    public String toString() {
+        return "Endereco{" + "id=" + id + ", lodradouro=" + lodradouro + ", numero=" + numero + ", bairro=" + bairro + '}';
+    }
+    
+    
+
 }

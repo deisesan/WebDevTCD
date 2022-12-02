@@ -97,4 +97,11 @@ public class Item implements Serializable {
     }
     //</editor-fold>
 
+    @Override
+    public String toString() {
+        return "Item{" + "id=" + id + ", acai=" + acai + ", adicionais=" + adicionais + ", quantidade=" + quantidade + ", preco=" + preco + ", compra=" + compra + '}';
+    }
+    
+    
+
 }

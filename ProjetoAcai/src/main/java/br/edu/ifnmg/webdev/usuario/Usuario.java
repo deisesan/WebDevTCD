@@ -108,4 +108,11 @@ public class Usuario implements Serializable {
     }
     //</editor-fold>
 
+    @Override
+    public String toString() {
+        return "Usuario{" + "id=" + id + ", nome=" + nome + ", nascimento=" + nascimento + ", telefone=" + telefone + ", endereco=" + endereco + ", credencial=" + credencial + ", compras=" + compras + '}';
+    }
+    
+    
+
 }

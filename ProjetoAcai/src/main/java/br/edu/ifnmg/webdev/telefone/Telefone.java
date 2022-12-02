@@ -49,5 +49,12 @@ public class Telefone implements Serializable {
         this.numero = numero;
     }
     //</editor-fold>
+
+    @Override
+    public String toString() {
+        return "Telefone{" + "id=" + id + ", ddd=" + ddd + ", numero=" + numero + '}';
+    }
+    
+    
     
 }

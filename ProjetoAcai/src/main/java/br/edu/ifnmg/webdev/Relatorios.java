@@ -2,6 +2,8 @@ package br.edu.ifnmg.webdev;
 
 import br.edu.ifnmg.webdev.acai.AcaiServiceLocal;
 import br.edu.ifnmg.webdev.adicional.AdicionalServiceLocal;
+import br.edu.ifnmg.webdev.credencial.CredencialServiceLocal;
+import br.edu.ifnmg.webdev.usuario.UsuarioServiceLocal;
 import br.edu.ifnmg.webdev.util.Util;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,9 +25,15 @@ public class Relatorios extends HttpServlet {
 
     @Inject
     private AcaiServiceLocal acaiService;
-    
+
     @Inject
     private AdicionalServiceLocal adicionalService;
+
+    @Inject
+    private UsuarioServiceLocal usuarioService;
+    
+    @Inject
+    private CredencialServiceLocal credencialService;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -57,12 +65,22 @@ public class Relatorios extends HttpServlet {
             sb.append("<pre>");
             sb.append(Util.toJson(acaiService.showAcais()));
             sb.append("</pre>");
-            
+
             sb.append("<h2>Adicionais cadastrados: </h>");
             sb.append("<pre>");
             sb.append(Util.toJson(adicionalService.showAdicionais()));
             sb.append("</pre>");
             
+            sb.append("<h2>Usuarios cadastrados: </h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(usuarioService.showUsuarios()));
+            sb.append("</pre>");
+            
+            sb.append("<h2>Credenciais cadastradas: </h>");
+            sb.append("<pre>");
+            sb.append(Util.toJson(credencialService.showCredenciais()));
+            sb.append("</pre>");
+
             sb.append("<a href=\"index.html\">Voltar</a>");
             sb.append("</body>");
             sb.append("</html>");

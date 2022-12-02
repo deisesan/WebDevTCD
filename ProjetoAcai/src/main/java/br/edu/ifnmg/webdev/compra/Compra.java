@@ -77,4 +77,11 @@ public class Compra implements Serializable {
     }
 
     //</editor-fold>
+
+    @Override
+    public String toString() {
+        return "Compra{" + "id=" + id + ", cliente=" + cliente + ", itens=" + itens + ", total=" + total + '}';
+    }
+    
+    
 }

@@ -82,4 +82,11 @@ public class Credencial implements Serializable {
     }
     //</editor-fold>
 
+    @Override
+    public String toString() {
+        return "Credencial{" + "id=" + id + ", email=" + email + ", senha=" + senha + ", perfil=" + perfil + ", usuario=" + usuario + '}';
+    }
+    
+    
+
 }
