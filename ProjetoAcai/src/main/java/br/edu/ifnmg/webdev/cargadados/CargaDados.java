@@ -213,11 +213,6 @@ public class CargaDados implements CargaDadosLocal {
 
         item1.setQuantidade(2);
 
-        adicional1.getItens().add(item1);
-        adicional2.getItens().add(item1);
-        adicional3.getItens().add(item1);
-        adicional4.getItens().add(item1);
-
         Item item2 = new Item();
         item2.setAcai(acai2);
         item2.getAdicionais().add(adicional1);
@@ -226,11 +221,6 @@ public class CargaDados implements CargaDadosLocal {
         item2.getAdicionais().add(adicional7);
 
         item2.setQuantidade(1);
-
-        adicional1.getItens().add(item2);
-        adicional5.getItens().add(item2);
-        adicional6.getItens().add(item2);
-        adicional7.getItens().add(item2);
 
         Compra compra1 = new Compra();
         compra1.setCliente(usuario3);

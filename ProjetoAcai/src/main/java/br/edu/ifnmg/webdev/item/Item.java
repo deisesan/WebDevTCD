@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
@@ -33,7 +34,11 @@ public class Item implements Serializable {
     @JoinColumn(name = "acai_id")
     private Acai acai;
 
-    @ManyToMany(mappedBy = "itens")
+    @ManyToMany
+    @JoinTable(
+            name = "item_adicional",
+            joinColumns = @JoinColumn(name = "item_id"),
+            inverseJoinColumns = @JoinColumn(name = "adicional_id"))
     private List<Adicional> adicionais;
 
     private Integer quantidade;
