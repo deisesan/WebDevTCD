@@ -23,4 +23,9 @@ public class CredencialService implements CredencialServiceLocal {
         return (List<Credencial>) q.getResultList();
     }
 
+    @Override
+    public Credencial findById(Long id) {
+        return em.find(Credencial.class, id);
+    }
+
 }

@@ -9,5 +9,7 @@ public interface AdicionalServiceLocal {
     void save(Adicional adicional);
 
     List<Adicional> findAll();
+
+    Adicional findById(Long id);
     
 }

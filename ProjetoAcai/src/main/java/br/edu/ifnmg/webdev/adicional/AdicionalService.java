@@ -1,6 +1,5 @@
 package br.edu.ifnmg.webdev.adicional;
 
-import br.edu.ifnmg.webdev.acai.Acai;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -22,6 +21,11 @@ public class AdicionalService implements AdicionalServiceLocal {
     public List<Adicional> findAll() {
         Query q = em.createQuery("SELECT a FROM Adicional a");
         return (List<Adicional>) q.getResultList();
+    }
+
+    @Override
+    public Adicional findById(Long id) {
+        return em.find(Adicional.class, id);
     }
 
 }

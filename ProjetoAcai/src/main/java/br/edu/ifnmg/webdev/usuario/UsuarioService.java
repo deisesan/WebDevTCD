@@ -23,4 +23,10 @@ public class UsuarioService implements UsuarioServiceLocal {
         return (List<Usuario>) q.getResultList();
     }
 
+    @Override
+    public Usuario findById(Long id) {
+        return em.find(Usuario.class, id);
+    }
+
+    
 }

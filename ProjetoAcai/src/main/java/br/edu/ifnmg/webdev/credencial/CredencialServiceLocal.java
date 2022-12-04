@@ -9,5 +9,7 @@ public interface CredencialServiceLocal {
     void save(Credencial credencial);
 
     List<Credencial> findAll();
+
+    Credencial findById(Long id);
     
 }

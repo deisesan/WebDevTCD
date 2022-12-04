@@ -22,6 +22,10 @@ public class ItemService implements ItemServiceLocal {
         Query q = em.createQuery("SELECT i FROM Item i");
         return (List<Item>) q.getResultList();
     }
-    
+
+    @Override
+    public Item findById(Long id) {
+        return em.find(Item.class, id);
+    }
     
 }

@@ -9,5 +9,7 @@ public interface CompraServiceLocal {
     void save(Compra compra);
 
     List<Compra> findAll();
+
+    Compra findById(Long id);
     
 }

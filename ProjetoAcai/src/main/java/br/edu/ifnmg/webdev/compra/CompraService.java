@@ -23,4 +23,9 @@ public class CompraService implements CompraServiceLocal {
         return (List<Compra>) q.getResultList();
     }
 
+    @Override
+    public Compra findById(Long id) {
+        return em.find(Compra.class, id);
+    }
+    
 }

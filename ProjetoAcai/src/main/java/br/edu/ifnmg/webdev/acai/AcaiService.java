@@ -23,4 +23,9 @@ public class AcaiService implements AcaiServiceLocal {
         return (List<Acai>) q.getResultList();
     }
 
+    @Override
+    public Acai findById(Long id) {
+        return em.find(Acai.class, id);
+    }
+
 }

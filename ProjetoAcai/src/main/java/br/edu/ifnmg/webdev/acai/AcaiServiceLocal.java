@@ -10,4 +10,6 @@ public interface AcaiServiceLocal {
 
     List<Acai> findAll();
 
+    Acai findById(Long id);
+
 }

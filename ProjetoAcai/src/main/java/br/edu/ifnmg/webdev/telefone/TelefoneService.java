@@ -23,4 +23,9 @@ public class TelefoneService implements TelefoneServiceLocal {
         return (List<Telefone>) q.getResultList();
     }
 
+    @Override
+    public Telefone findById(Long id) {
+        return em.find(Telefone.class, id);
+    }
+
 }

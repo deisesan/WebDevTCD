@@ -9,5 +9,7 @@ public interface ItemServiceLocal {
     void save(Item item);
 
     List<Item> findAll();
+
+    Item findById(Long id);
     
 }

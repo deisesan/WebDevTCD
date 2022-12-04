@@ -23,4 +23,9 @@ public class EnderecoService implements EnderecoServiceLocal {
         return (List<Endereco>) q.getResultList();
     }
 
+    @Override
+    public Endereco findById(Long id) {
+        return em.find(Endereco.class, id);
+    }
+
 }

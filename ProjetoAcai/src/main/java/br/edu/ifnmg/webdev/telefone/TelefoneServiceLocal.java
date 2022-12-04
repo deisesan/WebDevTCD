@@ -9,5 +9,7 @@ public interface TelefoneServiceLocal {
     void save(Telefone telefone);
 
     List<Telefone> findAll();
+
+    Telefone findById(Long id);
     
 }

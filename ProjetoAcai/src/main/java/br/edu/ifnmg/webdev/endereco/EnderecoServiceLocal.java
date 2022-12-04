@@ -10,4 +10,6 @@ public interface EnderecoServiceLocal {
 
     List<Endereco> findAll();
 
+    Endereco findById(Long id);
+
 }

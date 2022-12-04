@@ -9,5 +9,7 @@ public interface UsuarioServiceLocal {
     void save(Usuario usuario);
 
     List<Usuario> findAll();
+
+    Usuario findById(Long id);
     
 }
