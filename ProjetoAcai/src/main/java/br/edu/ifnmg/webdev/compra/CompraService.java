@@ -18,7 +18,7 @@ public class CompraService implements CompraServiceLocal {
     }
 
     @Override
-    public List<Compra> showCompras() {
+    public List<Compra> findAll() {
         Query q = em.createQuery("SELECT c FROM Compra c");
         return (List<Compra>) q.getResultList();
     }

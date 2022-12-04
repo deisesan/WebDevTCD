@@ -18,7 +18,7 @@ public class ItemService implements ItemServiceLocal {
     }
 
     @Override
-    public List<Item> showItens() {
+    public List<Item> findAll() {
         Query q = em.createQuery("SELECT i FROM Item i");
         return (List<Item>) q.getResultList();
     }

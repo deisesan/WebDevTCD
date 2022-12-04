@@ -18,7 +18,7 @@ public class TelefoneService implements TelefoneServiceLocal {
     }
 
     @Override
-    public List<Telefone> showTelefones() {
+    public List<Telefone> findAll() {
         Query q = em.createQuery("SELECT t FROM Telefone t");
         return (List<Telefone>) q.getResultList();
     }

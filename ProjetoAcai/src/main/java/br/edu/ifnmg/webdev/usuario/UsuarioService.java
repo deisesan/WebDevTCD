@@ -18,7 +18,7 @@ public class UsuarioService implements UsuarioServiceLocal {
     }
 
     @Override
-    public List<Usuario> showUsuarios() {
+    public List<Usuario> findAll() {
         Query q = em.createQuery("SELECT u FROM Usuario u");
         return (List<Usuario>) q.getResultList();
     }

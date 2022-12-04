@@ -8,6 +8,6 @@ public interface AdicionalServiceLocal {
 
     void save(Adicional adicional);
 
-    List<Adicional> showAdicionais();
+    List<Adicional> findAll();
     
 }

@@ -8,6 +8,6 @@ public interface CredencialServiceLocal {
 
     void save(Credencial credencial);
 
-    List<Credencial> showCredenciais();
+    List<Credencial> findAll();
     
 }

@@ -8,6 +8,6 @@ public interface UsuarioServiceLocal {
 
     void save(Usuario usuario);
 
-    List<Usuario> showUsuarios();
+    List<Usuario> findAll();
     
 }

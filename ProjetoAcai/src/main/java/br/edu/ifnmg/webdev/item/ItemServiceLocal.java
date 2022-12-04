@@ -8,6 +8,6 @@ public interface ItemServiceLocal {
 
     void save(Item item);
 
-    List<Item> showItens();
+    List<Item> findAll();
     
 }

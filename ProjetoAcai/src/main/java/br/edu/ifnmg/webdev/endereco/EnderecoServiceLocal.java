@@ -8,6 +8,6 @@ public interface EnderecoServiceLocal {
 
     void save(Endereco endereco);
 
-    List<Endereco> showEnderecos();
+    List<Endereco> findAll();
 
 }

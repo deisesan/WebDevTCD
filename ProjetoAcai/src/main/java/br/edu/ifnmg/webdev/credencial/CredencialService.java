@@ -18,7 +18,7 @@ public class CredencialService implements CredencialServiceLocal {
     }
 
     @Override
-    public List<Credencial> showCredenciais() {
+    public List<Credencial> findAll() {
         Query q = em.createQuery("SELECT c FROM Credencial c");
         return (List<Credencial>) q.getResultList();
     }

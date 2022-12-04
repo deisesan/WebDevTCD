@@ -18,7 +18,7 @@ public class AcaiService implements AcaiServiceLocal {
     }
 
     @Override
-    public List<Acai> showAcais() {
+    public List<Acai> findAll() {
         Query q = em.createQuery("SELECT a FROM Acai a");
         return (List<Acai>) q.getResultList();
     }

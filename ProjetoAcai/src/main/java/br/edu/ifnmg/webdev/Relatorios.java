@@ -79,42 +79,42 @@ public class Relatorios extends HttpServlet {
 
             sb.append("<h2>Açaís: </h>");
             sb.append("<pre>");
-            sb.append(Util.toJson(acaiService.showAcais()));
+            sb.append(Util.toJson(acaiService.findAll()));
             sb.append("</pre>");
 
             sb.append("<h2>Adicionais: </h>");
             sb.append("<pre>");
-            sb.append(Util.toJson(adicionalService.showAdicionais()));
+            sb.append(Util.toJson(adicionalService.findAll()));
             sb.append("</pre>");
 
             sb.append("<h2>Usuarios: </h>");
             sb.append("<pre>");
-            sb.append(Util.toJson(usuarioService.showUsuarios()));
+            sb.append(Util.toJson(usuarioService.findAll()));
             sb.append("</pre>");
 
             sb.append("<h2>Credenciais: </h>");
             sb.append("<pre>");
-            sb.append(Util.toJson(credencialService.showCredenciais()));
+            sb.append(Util.toJson(credencialService.findAll()));
             sb.append("</pre>");
 
             sb.append("<h2>Telefones: </h>");
             sb.append("<pre>");
-            sb.append(Util.toJson(telefoneService.showTelefones()));
+            sb.append(Util.toJson(telefoneService.findAll()));
             sb.append("</pre>");
 
             sb.append("<h2>Endereços: </h>");
             sb.append("<pre>");
-            sb.append(Util.toJson(enderecoService.showEnderecos()));
+            sb.append(Util.toJson(enderecoService.findAll()));
             sb.append("</pre>");
 
             sb.append("<h2>Itens: </h>");
             sb.append("<pre>");
-            sb.append(Util.toJson(itemService.showItens()));
+            sb.append(Util.toJson(itemService.findAll()));
             sb.append("</pre>");
 
             sb.append("<h2>Compras: </h>");
             sb.append("<pre>");
-            sb.append(Util.toJson(compraService.showCompras()));
+            sb.append(Util.toJson(compraService.findAll()));
             sb.append("</pre>");
 
             sb.append("<a href=\"index.html\">Voltar</a>");

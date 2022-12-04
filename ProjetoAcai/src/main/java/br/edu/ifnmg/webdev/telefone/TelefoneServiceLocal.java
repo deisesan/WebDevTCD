@@ -8,6 +8,6 @@ public interface TelefoneServiceLocal {
 
     void save(Telefone telefone);
 
-    List<Telefone> showTelefones();
+    List<Telefone> findAll();
     
 }

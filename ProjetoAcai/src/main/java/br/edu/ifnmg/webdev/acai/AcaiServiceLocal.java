@@ -8,6 +8,6 @@ public interface AcaiServiceLocal {
 
     void save(Acai acai);
 
-    List<Acai> showAcais();
+    List<Acai> findAll();
 
 }

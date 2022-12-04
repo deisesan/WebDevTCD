@@ -19,7 +19,7 @@ public class AdicionalService implements AdicionalServiceLocal {
     }
 
     @Override
-    public List<Adicional> showAdicionais() {
+    public List<Adicional> findAll() {
         Query q = em.createQuery("SELECT a FROM Adicional a");
         return (List<Adicional>) q.getResultList();
     }

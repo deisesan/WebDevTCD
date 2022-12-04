@@ -18,7 +18,7 @@ public class EnderecoService implements EnderecoServiceLocal {
     }
 
     @Override
-    public List<Endereco> showEnderecos() {
+    public List<Endereco> findAll() {
         Query q = em.createQuery("SELECT e FROM Endereco e");
         return (List<Endereco>) q.getResultList();
     }
