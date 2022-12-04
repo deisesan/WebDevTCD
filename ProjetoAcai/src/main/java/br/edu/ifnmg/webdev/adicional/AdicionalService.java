@@ -33,4 +33,10 @@ public class AdicionalService implements AdicionalServiceLocal {
         em.merge(adicional);
     }
 
+    @Override
+    public void delete(Long id) {
+        Adicional adicional = findById(id);
+        em.remove(adicional);
+    }
+
 }

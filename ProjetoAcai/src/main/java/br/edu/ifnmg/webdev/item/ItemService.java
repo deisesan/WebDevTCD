@@ -32,5 +32,10 @@ public class ItemService implements ItemServiceLocal {
     public void update(Item item) {
         em.merge(item);
     }
-    
+
+    @Override
+    public void delete(Long id) {
+        Item item = findById(id);
+        em.remove(item);
+    }    
 }

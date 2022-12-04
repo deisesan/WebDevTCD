@@ -13,5 +13,7 @@ public interface CompraServiceLocal {
     Compra findById(Long id);
 
     void update(Compra compra);
+
+    void delete(Long id);
     
 }

@@ -13,5 +13,7 @@ public interface TelefoneServiceLocal {
     Telefone findById(Long id);
 
     void update(Telefone telefone);
+
+    void delete(Long id);
     
 }

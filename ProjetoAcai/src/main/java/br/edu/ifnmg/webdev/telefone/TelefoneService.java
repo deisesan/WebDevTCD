@@ -32,5 +32,11 @@ public class TelefoneService implements TelefoneServiceLocal {
     public void update(Telefone telefone) {
         em.merge(telefone);
     }
-    
+
+    @Override
+    public void delete(Long id) {
+        Telefone telefone = findById(id);
+        em.remove(telefone);
+    }
+
 }

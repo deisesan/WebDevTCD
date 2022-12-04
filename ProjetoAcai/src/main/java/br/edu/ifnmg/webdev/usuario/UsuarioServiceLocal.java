@@ -13,5 +13,7 @@ public interface UsuarioServiceLocal {
     Usuario findById(Long id);
 
     void update(Usuario usuario);
+
+    void delete(Long id);
     
 }

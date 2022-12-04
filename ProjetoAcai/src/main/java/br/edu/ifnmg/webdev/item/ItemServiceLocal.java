@@ -13,5 +13,7 @@ public interface ItemServiceLocal {
     Item findById(Long id);
 
     void update(Item item);
+
+    void delete(Long id);
     
 }

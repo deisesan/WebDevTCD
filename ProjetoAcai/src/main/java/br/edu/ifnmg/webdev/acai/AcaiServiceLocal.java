@@ -14,4 +14,6 @@ public interface AcaiServiceLocal {
 
     void update(Acai acai);
 
+    void delete(Long id);
+
 }

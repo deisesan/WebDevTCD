@@ -33,4 +33,10 @@ public class AcaiService implements AcaiServiceLocal {
         em.merge(acai);
     }
 
+    @Override
+    public void delete(Long id) {
+        Acai acai = findById(id);
+        em.remove(acai);
+    }
+    
 }

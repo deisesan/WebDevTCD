@@ -32,5 +32,11 @@ public class CredencialService implements CredencialServiceLocal {
     public void update(Credencial credencial) {
         em.merge(credencial);
     }
-    
+
+    @Override
+    public void delete(Long id) {
+        Credencial credencial = findById(id);
+        em.remove(credencial);
+    }
+ 
 }

@@ -13,5 +13,7 @@ public interface CredencialServiceLocal {
     Credencial findById(Long id);
 
     void update(Credencial credencial);
+
+    void delete(Long id);
     
 }

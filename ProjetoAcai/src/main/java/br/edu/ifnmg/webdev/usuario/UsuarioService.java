@@ -33,4 +33,10 @@ public class UsuarioService implements UsuarioServiceLocal {
         em.merge(usuario);
     }
 
+    @Override
+    public void delete(Long id) {
+        Usuario usuario = findById(id);
+        em.remove(usuario);
+    }
+    
 }

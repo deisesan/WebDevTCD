@@ -33,4 +33,10 @@ public class EnderecoService implements EnderecoServiceLocal {
         em.merge(endereco);
     }
 
+    @Override
+    public void delete(Long id) {
+        Endereco endereco = findById(id);
+        em.remove(endereco);
+    }
+
 }

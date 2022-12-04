@@ -13,5 +13,7 @@ public interface AdicionalServiceLocal {
     Adicional findById(Long id);
 
     void update(Adicional adicional);
+
+    void delete(Long id);
     
 }

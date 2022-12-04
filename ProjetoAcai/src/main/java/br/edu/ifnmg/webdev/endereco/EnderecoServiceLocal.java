@@ -14,4 +14,6 @@ public interface EnderecoServiceLocal {
 
     void update(Endereco endereco);
 
+    void delete(Long id);
+
 }

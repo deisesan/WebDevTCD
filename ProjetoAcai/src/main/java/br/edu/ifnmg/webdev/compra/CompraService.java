@@ -32,5 +32,11 @@ public class CompraService implements CompraServiceLocal {
     public void update(Compra compra) {
         em.merge(compra);
     }
+
+    @Override
+    public void delete(Long id) {
+        Compra compra = findById(id);
+        em.remove(compra);
+    }
     
 }
