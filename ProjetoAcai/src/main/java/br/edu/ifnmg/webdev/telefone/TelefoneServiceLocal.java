@@ -11,5 +11,7 @@ public interface TelefoneServiceLocal {
     List<Telefone> findAll();
 
     Telefone findById(Long id);
+
+    void update(Telefone telefone);
     
 }

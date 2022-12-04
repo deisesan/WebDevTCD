@@ -11,5 +11,7 @@ public interface ItemServiceLocal {
     List<Item> findAll();
 
     Item findById(Long id);
+
+    void update(Item item);
     
 }

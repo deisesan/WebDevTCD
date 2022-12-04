@@ -11,5 +11,7 @@ public interface UsuarioServiceLocal {
     List<Usuario> findAll();
 
     Usuario findById(Long id);
+
+    void update(Usuario usuario);
     
 }

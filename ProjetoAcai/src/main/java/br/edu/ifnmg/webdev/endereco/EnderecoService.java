@@ -28,4 +28,9 @@ public class EnderecoService implements EnderecoServiceLocal {
         return em.find(Endereco.class, id);
     }
 
+    @Override
+    public void update(Endereco endereco) {
+        em.merge(endereco);
+    }
+
 }

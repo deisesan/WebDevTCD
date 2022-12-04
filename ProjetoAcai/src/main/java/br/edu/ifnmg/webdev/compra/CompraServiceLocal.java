@@ -11,5 +11,7 @@ public interface CompraServiceLocal {
     List<Compra> findAll();
 
     Compra findById(Long id);
+
+    void update(Compra compra);
     
 }

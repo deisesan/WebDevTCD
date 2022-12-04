@@ -28,5 +28,9 @@ public class UsuarioService implements UsuarioServiceLocal {
         return em.find(Usuario.class, id);
     }
 
-    
+    @Override
+    public void update(Usuario usuario) {
+        em.merge(usuario);
+    }
+
 }

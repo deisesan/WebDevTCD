@@ -12,4 +12,6 @@ public interface EnderecoServiceLocal {
 
     Endereco findById(Long id);
 
+    void update(Endereco endereco);
+
 }

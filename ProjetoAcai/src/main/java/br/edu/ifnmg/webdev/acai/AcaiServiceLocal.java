@@ -12,4 +12,6 @@ public interface AcaiServiceLocal {
 
     Acai findById(Long id);
 
+    void update(Acai acai);
+
 }

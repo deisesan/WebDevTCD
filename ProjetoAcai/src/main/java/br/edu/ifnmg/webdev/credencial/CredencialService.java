@@ -28,4 +28,9 @@ public class CredencialService implements CredencialServiceLocal {
         return em.find(Credencial.class, id);
     }
 
+    @Override
+    public void update(Credencial credencial) {
+        em.merge(credencial);
+    }
+    
 }

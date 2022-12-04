@@ -28,4 +28,9 @@ public class AcaiService implements AcaiServiceLocal {
         return em.find(Acai.class, id);
     }
 
+    @Override
+    public void update(Acai acai) {
+        em.merge(acai);
+    }
+
 }

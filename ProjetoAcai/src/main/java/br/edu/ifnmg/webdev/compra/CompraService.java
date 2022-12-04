@@ -27,5 +27,10 @@ public class CompraService implements CompraServiceLocal {
     public Compra findById(Long id) {
         return em.find(Compra.class, id);
     }
+
+    @Override
+    public void update(Compra compra) {
+        em.merge(compra);
+    }
     
 }

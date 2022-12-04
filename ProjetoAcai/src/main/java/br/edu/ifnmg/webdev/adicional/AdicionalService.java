@@ -28,4 +28,9 @@ public class AdicionalService implements AdicionalServiceLocal {
         return em.find(Adicional.class, id);
     }
 
+    @Override
+    public void update(Adicional adicional) {
+        em.merge(adicional);
+    }
+
 }

@@ -11,5 +11,7 @@ public interface CredencialServiceLocal {
     List<Credencial> findAll();
 
     Credencial findById(Long id);
+
+    void update(Credencial credencial);
     
 }

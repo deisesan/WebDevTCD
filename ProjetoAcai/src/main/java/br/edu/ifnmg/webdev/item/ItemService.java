@@ -27,5 +27,10 @@ public class ItemService implements ItemServiceLocal {
     public Item findById(Long id) {
         return em.find(Item.class, id);
     }
+
+    @Override
+    public void update(Item item) {
+        em.merge(item);
+    }
     
 }

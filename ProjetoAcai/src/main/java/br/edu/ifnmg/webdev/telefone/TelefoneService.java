@@ -28,4 +28,9 @@ public class TelefoneService implements TelefoneServiceLocal {
         return em.find(Telefone.class, id);
     }
 
+    @Override
+    public void update(Telefone telefone) {
+        em.merge(telefone);
+    }
+    
 }

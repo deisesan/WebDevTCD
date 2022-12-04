@@ -11,5 +11,7 @@ public interface AdicionalServiceLocal {
     List<Adicional> findAll();
 
     Adicional findById(Long id);
+
+    void update(Adicional adicional);
     
 }
